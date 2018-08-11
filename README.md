@@ -43,11 +43,11 @@ This allows you to specify a character set for your text assets (HTML, Javascrip
 
 #### NGINX Configuration
 #### Client Max Body Size
-By default, nginx has a default max body size of 1 megabyte. Any request above this size (e.g. uploading a 2m file) will result in a `413 Request Entity too Large` error. You can configure this value by setting `max_body_size:`
+By default, nginx has a default max body size of 1 megabyte. Any request above this size (e.g. uploading a 2m file) will result in a `413 Request Entity too Large` error. You can configure this value by setting `max_upload_file_size:`
 
 ```json
 {
-  "max_body_size": "10m"
+  "max_upload_file_size": "10m"
 }
 ```
 The size setting follows nginx's convention of bytes, kilobytes and megabytes (1024, 8k, 1m).
