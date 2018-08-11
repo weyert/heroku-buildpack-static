@@ -43,7 +43,13 @@ http {
     port_in_redirect off;
     keepalive_timeout 5;
     root <%= root %>;
-    client_max_body_size <%= max_body_size %>;
+
+<% if max_upload_file_size %>
+   client_max_body_size  <%= max_upload_file_size %>;
+ <% else %>
+   client_max_body_size  1M;
+ <% end %>
+
   <% if error_page %>
     error_page 404 500 /<%= error_page %>;
   <% end %>
